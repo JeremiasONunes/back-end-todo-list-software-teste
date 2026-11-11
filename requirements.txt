@@ -1,0 +1,29 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+pydantic[email]
+python-dotenv
+bcrypt
+requests
+
+# Tokens de acesso (JWT). É o PyJWT, e não o python-jose que aparece em muitos
+# tutoriais: é o que a documentação do FastAPI passou a indicar, tem manutenção
+# ativa e faz só uma coisa.
+PyJWT
+
+# Driver do PostgreSQL, usado em produção.
+# O SQLite não precisa de driver: vem na biblioteca padrão do Python.
+psycopg[binary]
+
+# ----------------------------------------------------------------------------
+# E as ferramentas de teste?
+# ----------------------------------------------------------------------------
+# Este arquivo lista apenas o que a APLICAÇÃO precisa para rodar. A ferramenta
+# de teste não está aqui — e essa ausência é de propósito: instalá-la é a
+# primeira atividade da UC 11.
+#
+# A distinção vale ser entendida agora, porque ela existe em qualquer projeto
+# profissional: uma dependência de produção vai para o servidor junto com a
+# aplicação; uma dependência de desenvolvimento fica na máquina de quem
+# programa. Instalar a suíte de testes no servidor de produção é carregar
+# código que nunca vai rodar lá.
